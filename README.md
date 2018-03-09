@@ -65,7 +65,22 @@ Simple smart contract to verify authenticity of messages
       }
 
     };
+    
+## Deployment
 
+    # Terminal 1
+        testrpc
+        
+    # Terminal 2
+        truffle console
+            var pot = ProofOfTruth.at(ProofOfTruth.address)
+            //undefined
+            pot.checkDocument('I am Satoshi');
+            //false
+            pot.notarize('I am Satoshi');
+            //terminal 1: eth_getTransactionReceipt
+            pot.checkDocument('I am Satoshi');
+            //true
 
 ## Acknowledgments
 
